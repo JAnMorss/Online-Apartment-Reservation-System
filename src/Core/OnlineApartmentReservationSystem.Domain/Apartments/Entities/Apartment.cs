@@ -1,6 +1,6 @@
 ﻿using OnlineApartmentReservationSystem.Domain.Apartments.Enums;
 using OnlineApartmentReservationSystem.Domain.Apartments.ValueObjects;
-using OnlineApartmentReservationSystem.Domain.Shared;
+using OnlineApartmentReservationSystem.Domain.ValueObjects;
 using OnlineApartmentReservationSystem.Shared.Abstractions.Domain;
 
 namespace OnlineApartmentReservationSystem.Domain.Apartments.Entities

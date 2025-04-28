@@ -1,7 +1,6 @@
-﻿
-using OnlineApartmentReservationSystem.Domain.Shared.Exceptions;
+﻿using OnlineApartmentReservationSystem.Domain.Shared.Exceptions;
 
-namespace OnlineApartmentReservationSystem.Domain.Shared
+namespace OnlineApartmentReservationSystem.Domain.ValueObjects
 {
     public record Currency
     {

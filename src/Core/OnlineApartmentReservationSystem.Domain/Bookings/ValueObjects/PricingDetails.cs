@@ -1,4 +1,4 @@
-﻿using OnlineApartmentReservationSystem.Domain.Shared;
+﻿using OnlineApartmentReservationSystem.Domain.ValueObjects;
 
 namespace OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects
 {

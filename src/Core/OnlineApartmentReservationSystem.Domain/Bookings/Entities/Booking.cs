@@ -4,7 +4,7 @@ using OnlineApartmentReservationSystem.Domain.Bookings.Errors;
 using OnlineApartmentReservationSystem.Domain.Bookings.Events;
 using OnlineApartmentReservationSystem.Domain.Bookings.Services;
 using OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects;
-using OnlineApartmentReservationSystem.Domain.Shared;
+using OnlineApartmentReservationSystem.Domain.ValueObjects;
 using OnlineApartmentReservationSystem.Shared.Abstractions.Domain;
 using OnlineApartmentReservationSystem.Shared.Abstractions.ErrorHandling;
 
