@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1EFBC03F-41D0-445F-AA6B-146358CC96C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{920DBF9B-9B57-4745-878E-3E358DFCA688}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{92AD6005-B7CE-42DA-91A5-E02BBAFF14B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{9DFD8506-FA41-497F-B518-231B81DD713A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{ABB9840C-68B9-4A12-BA6F-1897A56DD645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineApartmentReservationSystem.Shared.Abstractions", "Core\Shared\OnlineApartmentReservationSystem.Shared.Abstractions\OnlineApartmentReservationSystem.Shared.Abstractions.csproj", "{81912C2E-809C-A52F-9C62-24AB4A3802C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineApartmentReservationSystem.Application", "Core\OnlineApartmentReservationSystem.Application\OnlineApartmentReservationSystem.Application.csproj", "{4E4DD026-A471-3DD9-DB99-A6E850A60925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineApartmentReservationSystem.Domain", "Core\OnlineApartmentReservationSystem.Domain\OnlineApartmentReservationSystem.Domain.csproj", "{2FAEC1CE-E659-DE30-E025-44768EDC3EE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineApartmentReservationSystem.Infrastructure", "Inrastructure\OnlineApartmentReservationSystem.Infrastructure\OnlineApartmentReservationSystem.Infrastructure.csproj", "{2E9154E3-9CB7-934E-B753-6C0402194E27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineApartmentReservationSystem.API", "Presentation\OnlineApartmentReservationSystem.API\OnlineApartmentReservationSystem.API.csproj", "{CF769481-A264-CD79-4703-A40D3131923F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81912C2E-809C-A52F-9C62-24AB4A3802C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81912C2E-809C-A52F-9C62-24AB4A3802C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81912C2E-809C-A52F-9C62-24AB4A3802C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81912C2E-809C-A52F-9C62-24AB4A3802C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4DD026-A471-3DD9-DB99-A6E850A60925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4DD026-A471-3DD9-DB99-A6E850A60925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4DD026-A471-3DD9-DB99-A6E850A60925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4DD026-A471-3DD9-DB99-A6E850A60925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FAEC1CE-E659-DE30-E025-44768EDC3EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FAEC1CE-E659-DE30-E025-44768EDC3EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FAEC1CE-E659-DE30-E025-44768EDC3EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FAEC1CE-E659-DE30-E025-44768EDC3EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9154E3-9CB7-934E-B753-6C0402194E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9154E3-9CB7-934E-B753-6C0402194E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9154E3-9CB7-934E-B753-6C0402194E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9154E3-9CB7-934E-B753-6C0402194E27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF769481-A264-CD79-4703-A40D3131923F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF769481-A264-CD79-4703-A40D3131923F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF769481-A264-CD79-4703-A40D3131923F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF769481-A264-CD79-4703-A40D3131923F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{920DBF9B-9B57-4745-878E-3E358DFCA688} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{92AD6005-B7CE-42DA-91A5-E02BBAFF14B5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9DFD8506-FA41-497F-B518-231B81DD713A} = {920DBF9B-9B57-4745-878E-3E358DFCA688}
+		{ABB9840C-68B9-4A12-BA6F-1897A56DD645} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{81912C2E-809C-A52F-9C62-24AB4A3802C0} = {9DFD8506-FA41-497F-B518-231B81DD713A}
+		{4E4DD026-A471-3DD9-DB99-A6E850A60925} = {920DBF9B-9B57-4745-878E-3E358DFCA688}
+		{2FAEC1CE-E659-DE30-E025-44768EDC3EE6} = {920DBF9B-9B57-4745-878E-3E358DFCA688}
+		{2E9154E3-9CB7-934E-B753-6C0402194E27} = {ABB9840C-68B9-4A12-BA6F-1897A56DD645}
+		{CF769481-A264-CD79-4703-A40D3131923F} = {92AD6005-B7CE-42DA-91A5-E02BBAFF14B5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE4E4969-90FC-42F6-A1E3-5D4194B40C3A}
+	EndGlobalSection
+EndGlobal
