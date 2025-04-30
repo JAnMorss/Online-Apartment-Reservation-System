@@ -1,4 +1,4 @@
-﻿using OnlineApartmentReservationSystem.Domain.Users.ValueObjects;
+﻿using OnlineApartmentReservationSystem.Domain.Bookings.Exceptions;
 
 namespace OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects
 {
@@ -8,9 +8,9 @@ namespace OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects
 
         public BookingId(Guid value)
         {
-            if (Value == Guid.Empty)
+            if (value == Guid.Empty)
             {
-                throw new ArgumentNullException("User ID cannot be empty.");
+                throw new EmptyBookingIdException();
             }
 
             Value = value;

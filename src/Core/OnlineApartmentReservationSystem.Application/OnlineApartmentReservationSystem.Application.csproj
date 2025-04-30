@@ -6,4 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bookings\QueryHandlers\" />
+    <Folder Include="Bookings\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineApartmentReservationSystem.Domain\OnlineApartmentReservationSystem.Domain.csproj" />
+    <ProjectReference Include="..\Shared\OnlineApartmentReservationSystem.Shared.Abstractions\OnlineApartmentReservationSystem.Shared.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

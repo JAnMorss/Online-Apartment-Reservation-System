@@ -6,9 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\OnlineApartmentReservationSystem.Application\OnlineApartmentReservationSystem.Application.csproj" />
-        <ProjectReference Include="..\Shared\OnlineApartmentReservationSystem.Shared.Abstractions\OnlineApartmentReservationSystem.Shared.Abstractions.csproj" />
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\OnlineApartmentReservationSystem.Shared.Abstractions\OnlineApartmentReservationSystem.Shared.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

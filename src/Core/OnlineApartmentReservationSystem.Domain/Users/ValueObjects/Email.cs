@@ -2,11 +2,11 @@
 
 namespace OnlineApartmentReservationSystem.Domain.Users.ValueObjects
 {
-    public record UserEmail
+    public record Email
     {
         public string Value { get; }
 
-        public UserEmail(string value)
+        public Email(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -16,10 +16,10 @@ namespace OnlineApartmentReservationSystem.Domain.Users.ValueObjects
             Value = value;
         }
 
-        public static implicit operator string(UserEmail email)
+        public static implicit operator string(Email email)
             => email.Value;
 
-        public static implicit operator UserEmail(string email)
+        public static implicit operator Email(string email)
             => new(email);
     }
 }

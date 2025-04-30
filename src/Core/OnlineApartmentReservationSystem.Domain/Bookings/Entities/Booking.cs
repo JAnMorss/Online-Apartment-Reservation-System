@@ -12,6 +12,8 @@ namespace OnlineApartmentReservationSystem.Domain.Bookings.Entities
 {
     public class Booking : AggregateRoot<BookingId>
     {
+        public BookingId Id { get; private set; }
+
         public Guid ApartmentId { get; private set; }
 
         public Guid UserId { get; private set; }
