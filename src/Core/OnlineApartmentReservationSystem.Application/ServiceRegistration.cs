@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace OnlineApartmentReservationSystem.Shared.Abstractions
+namespace OnlineApartmentReservationSystem.Application
 {
     public static class ServiceRegistration
     {

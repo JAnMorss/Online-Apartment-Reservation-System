@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Messaging;
 
 namespace OnlineApartmentReservationSystem.Application.Bookings.Queries
 {
-    internal interface GetBookingQuery
-    {
-    }
+    public sealed record GetBookingQuery(Guid BookingId) : IQuery<BookingResponse>;
 }

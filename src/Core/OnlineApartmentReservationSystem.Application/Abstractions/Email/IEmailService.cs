@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnlineApartmentReservationSystem.Application.Abstractions
+﻿namespace OnlineApartmentReservationSystem.Application.Abstractions.Email
 {
-    internal interface IEmailService
+    public interface IEmailService
     {
+        Task SendAsync(Domain.Users.ValueObjects.Email recipient, string subject, string body);
     }
 }

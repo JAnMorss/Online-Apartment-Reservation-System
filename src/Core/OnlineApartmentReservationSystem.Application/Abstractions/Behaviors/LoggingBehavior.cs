@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineApartmentReservationSystem.Shared.Abstractions.Application.Clock
+namespace OnlineApartmentReservationSystem.Application.Abstractions.Behaviors
 {
-    internal interface IDateTimeProvider
+    internal class LoggingBehavior
     {
     }
 }

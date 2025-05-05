@@ -8,7 +8,8 @@ using OnlineApartmentReservationSystem.Domain.Bookings.Services;
 using OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects;
 using OnlineApartmentReservationSystem.Domain.Users.Errors;
 using OnlineApartmentReservationSystem.Domain.Users.Interface;
-using OnlineApartmentReservationSystem.Shared.Abstractions.Commands;
+using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Clock;
+using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Messaging;
 using OnlineApartmentReservationSystem.Shared.Abstractions.Domain;
 using OnlineApartmentReservationSystem.Shared.Abstractions.ErrorHandling;
 
@@ -21,19 +22,22 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.CommandHandlers
         private readonly IBookRepository _bookRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly PricingService _pricingService;
+        private readonly IDateTimeProvider _dateTimeProvider;
 
         public ReserveBookingCommandHandler(
-            IUserRepository userRepository, 
-            IApartmentRepository apartmentRepository, 
-            IBookRepository bookRepository, 
-            IUnitOfWork unitOfWork, 
-            PricingService pricingService)
+            IUserRepository userRepository,
+            IApartmentRepository apartmentRepository,
+            IBookRepository bookRepository,
+            IUnitOfWork unitOfWork,
+            PricingService pricingService,
+            IDateTimeProvider dateTimeProvider)
         {
             _userRepository = userRepository;
             _apartmentRepository = apartmentRepository;
             _bookRepository = bookRepository;
             _unitOfWork = unitOfWork;
             _pricingService = pricingService;
+            _dateTimeProvider = dateTimeProvider;
         }
 
         public async Task<Result<Guid>> Handle(ReserveBookingCommand request, CancellationToken cancellationToken)
@@ -63,7 +67,7 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.CommandHandlers
                 apartment,
                 user.Id,
                 duration,
-                utcNow: DateTime.UtcNow,
+                _dateTimeProvider.UtcNow,
                 _pricingService);
 
             _bookRepository.Add(booking);   
