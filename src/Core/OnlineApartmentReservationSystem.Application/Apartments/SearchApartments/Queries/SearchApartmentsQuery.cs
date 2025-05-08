@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineApartmentReservationSystem.Application.Abstractions.Messaging;
 
 namespace OnlineApartmentReservationSystem.Application.Apartments.SearchApartments.Queries
 {
-    internal class Class1
-    {
-    }
+    public record SearchApartmentsQuery(
+        DateOnly StartDate,
+        DateOnly EndDate) : IQuery<IReadOnlyList<ApartmentResponse>>;
 }

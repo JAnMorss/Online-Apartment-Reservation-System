@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnlineApartmentReservationSystem.Application.Abstractions.Clock
+﻿namespace OnlineApartmentReservationSystem.Application.Abstractions.Clock
 {
-    internal interface IDateTimeProvider
+    public interface IDateTimeProvider
     {
+        DateTime UtcNow { get; }
     }
 }

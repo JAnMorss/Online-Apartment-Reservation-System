@@ -1,4 +1,4 @@
-﻿using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Messaging;
+﻿using OnlineApartmentReservationSystem.Application.Abstractions.Messaging;
 
 namespace OnlineApartmentReservationSystem.Application.Bookings.Queries
 {

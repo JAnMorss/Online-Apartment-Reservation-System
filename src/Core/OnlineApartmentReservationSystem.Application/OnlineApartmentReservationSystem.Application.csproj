@@ -8,12 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineApartmentReservationSystem.Domain\OnlineApartmentReservationSystem.Domain.csproj" />
-    <ProjectReference Include="..\Shared\OnlineApartmentReservationSystem.Shared.Abstractions\OnlineApartmentReservationSystem.Shared.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

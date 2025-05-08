@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using OnlineApartmentReservationSystem.Application.Abstractions.Data;
+using OnlineApartmentReservationSystem.Application.Abstractions.Messaging;
 using OnlineApartmentReservationSystem.Application.Bookings.Queries;
-using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Messaging;
 using OnlineApartmentReservationSystem.Shared.Abstractions.ErrorHandling;
 
 namespace OnlineApartmentReservationSystem.Application.Bookings.QueryHandler

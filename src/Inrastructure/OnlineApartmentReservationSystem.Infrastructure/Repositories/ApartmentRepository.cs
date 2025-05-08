@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineApartmentReservationSystem.Application.Abstractions.Exceptions
+namespace OnlineApartmentReservationSystem.Infrastructure.Repositories
 {
-    internal class ValidationException
+    internal class ApartmentRepository
     {
     }
 }

@@ -1,4 +1,6 @@
-﻿using OnlineApartmentReservationSystem.Application.Bookings.Commands;
+﻿using OnlineApartmentReservationSystem.Application.Abstractions.Clock;
+using OnlineApartmentReservationSystem.Application.Abstractions.Messaging;
+using OnlineApartmentReservationSystem.Application.Bookings.Commands;
 using OnlineApartmentReservationSystem.Domain.Apartments.Errors;
 using OnlineApartmentReservationSystem.Domain.Apartments.Interface;
 using OnlineApartmentReservationSystem.Domain.Bookings.Entities;
@@ -8,8 +10,6 @@ using OnlineApartmentReservationSystem.Domain.Bookings.Services;
 using OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects;
 using OnlineApartmentReservationSystem.Domain.Users.Errors;
 using OnlineApartmentReservationSystem.Domain.Users.Interface;
-using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Clock;
-using OnlineApartmentReservationSystem.Shared.Abstractions.Application.Messaging;
 using OnlineApartmentReservationSystem.Shared.Abstractions.Domain;
 using OnlineApartmentReservationSystem.Shared.Abstractions.ErrorHandling;
 

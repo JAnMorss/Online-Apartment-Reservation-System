@@ -10,9 +10,32 @@ using OnlineApartmentReservationSystem.Shared.Abstractions.ErrorHandling;
 
 namespace OnlineApartmentReservationSystem.Domain.Bookings.Entities
 {
-    public class Booking : AggregateRoot<BookingId>
+    public class Booking : Entity
     {
-        public BookingId Id { get; private set; }
+
+        private Booking(
+            Guid id,
+            Guid apartmentId,
+            Guid userId,
+            DateRange duration,
+            Money priceForPeriod,
+            Money cleaningFee,
+            Money amenitiesUpCharge,
+            Money totalPrice,
+            BookingStatus status,
+            DateTime createdOnUtc)
+            : base(id)
+        {
+            ApartmentId = apartmentId;
+            UserId = userId;
+            Duration = duration;
+            PriceForPeriod = priceForPeriod;
+            CleaningFee = cleaningFee;
+            AmenitiesUpCharge = amenitiesUpCharge;
+            TotalPrice = totalPrice;
+            Status = status;
+            CreatedOnUtc = createdOnUtc;
+        }
 
         public Guid ApartmentId { get; private set; }
 
@@ -40,30 +63,7 @@ namespace OnlineApartmentReservationSystem.Domain.Bookings.Entities
 
         public DateTime? CancelledOnUtc { get; private set; }
 
-        private Booking(
-            BookingId id,
-            Guid apartmentId,
-            Guid userId,
-            DateRange duration,
-            Money priceForPeriod,
-            Money cleaningFee,
-            Money amenitiesUpCharge,
-            Money totalPrice,
-            BookingStatus status,
-            DateTime createdOnUtc)
-        {
-            Id = id;
-            ApartmentId = apartmentId;
-            UserId = userId;
-            Duration = duration;
-            PriceForPeriod = priceForPeriod;
-            CleaningFee = cleaningFee;
-            AmenitiesUpCharge = amenitiesUpCharge;
-            TotalPrice = totalPrice;
-            Status = status;
-            CreatedOnUtc = createdOnUtc;
-        }
-
+        
         public static Booking Reserve(Apartment apartment, Guid userId,
             DateRange duration, DateTime utcNow, PricingService pricingService)
         {
