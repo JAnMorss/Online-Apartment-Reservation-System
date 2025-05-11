@@ -1,11 +1,13 @@
 ﻿using OnlineApartmentReservationSystem.Application.Abstractions.Clock;
 using OnlineApartmentReservationSystem.Application.Abstractions.Messaging;
 using OnlineApartmentReservationSystem.Application.Bookings.Commands;
+using OnlineApartmentReservationSystem.Application.Exceptions;
 using OnlineApartmentReservationSystem.Domain.Apartments.Errors;
 using OnlineApartmentReservationSystem.Domain.Apartments.Interface;
 using OnlineApartmentReservationSystem.Domain.Bookings.Entities;
 using OnlineApartmentReservationSystem.Domain.Bookings.Errors;
 using OnlineApartmentReservationSystem.Domain.Bookings.Interface;
+using OnlineApartmentReservationSystem.Domain.Bookings.Repositories;
 using OnlineApartmentReservationSystem.Domain.Bookings.Services;
 using OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects;
 using OnlineApartmentReservationSystem.Domain.Users.Errors;
@@ -63,18 +65,20 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.CommandHandlers
                 return Result.Failure<Guid>(BookingErrors.Overlap); 
             }
 
-            var booking = Booking.Reserve(
-                apartment,
-                user.Id,
-                duration,
-                _dateTimeProvider.UtcNow,
-                _pricingService);
+            try
+            {
+                var booking = Booking.Reserve(apartment, user.Id, duration, _dateTimeProvider.UtcNow, _pricingService);
 
-            _bookRepository.Add(booking);   
+                _bookRepository.Add(booking);
 
-            await _unitOfWork.SaveChangesAsync(cancellationToken);
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            return Result.Success<Guid>(booking.Id);
+                return booking.Id;
+            }
+            catch (ConcurrencyException)
+            {
+                return Result.Failure<Guid>(BookingErrors.Overlap);
+            }
         }
     }
 }
