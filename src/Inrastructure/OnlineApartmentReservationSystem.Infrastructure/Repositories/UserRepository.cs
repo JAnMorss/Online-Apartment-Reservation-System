@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineApartmentReservationSystem.Domain.Users.Entities;
+using OnlineApartmentReservationSystem.Domain.Users.Interface;
 
 namespace OnlineApartmentReservationSystem.Infrastructure.Repositories
 {
-    internal class UserRepository
+    internal sealed class UserRepository : Repository<User>, IUserRepository
     {
+        public UserRepository(ApplicationDbContext dbContext) : base(dbContext)
+        {
+        }
     }
 }
