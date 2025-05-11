@@ -1,6 +1,6 @@
 ﻿using OnlineApartmentReservationSystem.Shared.Abstractions.Exceptions;
 
-namespace OnlineApartmentReservationSystem.Application.Abstractions.Exceptions
+namespace OnlineApartmentReservationSystem.Application.Exceptions
 {
     public sealed class ValidationException : CustomException
     {
