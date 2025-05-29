@@ -1,4 +1,4 @@
-﻿using Npgsql;
+﻿using Microsoft.Data.SqlClient;
 using OnlineApartmentReservationSystem.Application.Abstractions.Data;
 using System.Data;
 
@@ -15,10 +15,8 @@ namespace OnlineApartmentReservationSystem.Infrastructure.Data
 
         public IDbConnection CreateConnection()
         {
-            var connection = new NpgsqlConnection(_connectionString);
-
+            var connection = new SqlConnection(_connectionString);
             connection.Open();
-
             return connection;
         }
     }

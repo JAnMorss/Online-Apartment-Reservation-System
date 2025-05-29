@@ -1,11 +1,12 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using OnlineApartmentReservationSystem.Application.Exceptions;
 using OnlineApartmentReservationSystem.Shared.Abstractions.Domain;
 
 namespace OnlineApartmentReservationSystem.Infrastructure
 {
-    public sealed class ApplicationDbContext :DbContext, IUnitOfWork
+    public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     {
         private readonly IPublisher _publisher;
 
@@ -58,6 +59,6 @@ namespace OnlineApartmentReservationSystem.Infrastructure
                 await _publisher.Publish(domainEvent);
             }
         }
-         
+
     }
 }

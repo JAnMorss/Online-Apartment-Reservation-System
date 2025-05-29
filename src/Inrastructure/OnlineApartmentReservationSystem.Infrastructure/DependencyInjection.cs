@@ -6,7 +6,7 @@ using OnlineApartmentReservationSystem.Application.Abstractions.Clock;
 using OnlineApartmentReservationSystem.Application.Abstractions.Data;
 using OnlineApartmentReservationSystem.Application.Abstractions.Email;
 using OnlineApartmentReservationSystem.Domain.Apartments.Interface;
-using OnlineApartmentReservationSystem.Domain.Bookings.Repositories;
+using OnlineApartmentReservationSystem.Domain.Bookings.Interface;
 using OnlineApartmentReservationSystem.Domain.Users.Interface;
 using OnlineApartmentReservationSystem.Infrastructure.Clock;
 using OnlineApartmentReservationSystem.Infrastructure.Data;
@@ -27,20 +27,21 @@ namespace OnlineApartmentReservationSystem.Infrastructure
             services.AddTransient<IEmailService, EmailService>();
 
             var connectionString = 
-                configuration.GetConnectionString("Dabase") ??
-                throw new ArgumentException(nameof(configuration));
+                configuration.GetConnectionString("Database") ?? 
+                throw new InvalidOperationException("Connection string 'Database' is missing in configuration.");
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention();
+                options.UseSqlServer(connectionString);
             });
+
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IApartmentRepository, ApartmentRepository>();
             services.AddScoped<IBookingRepository, BookingRepository>();
             services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
-            services.AddSingleton<ISqlConnectionFactory>(_ => 
+            services.AddSingleton<ISqlConnectionFactory>(_ =>
                 new SqlConnectionFactory(connectionString));
 
             SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
