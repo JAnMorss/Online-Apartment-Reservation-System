@@ -1,11 +1,8 @@
-﻿using OnlineApartmentReservationSystem.Shared.Abstractions.Exceptions;
-
-namespace OnlineApartmentReservationSystem.Application.Exceptions
+﻿namespace OnlineApartmentReservationSystem.Application.Exceptions
 {
-    public sealed class ValidationException : CustomException
+    public sealed class ValidationException : Exception
     {
         public ValidationException(IEnumerable<ValidationError> errors)
-            : base("One or more validation errors occurred.")
         {
             Errors = errors;
         }

@@ -1,8 +1,8 @@
 ﻿using System;
 using FluentValidation;
 using MediatR;
-using OnlineApartmentReservationSystem.Application.Abstractions.Exceptions;
 using OnlineApartmentReservationSystem.Application.Abstractions.Messaging;
+using OnlineApartmentReservationSystem.Application.Exceptions;
 
 namespace OnlineApartmentReservationSystem.Application.Abstractions.Behaviors
 {

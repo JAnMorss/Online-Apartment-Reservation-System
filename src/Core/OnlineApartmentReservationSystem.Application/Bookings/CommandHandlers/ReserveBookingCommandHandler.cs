@@ -7,7 +7,6 @@ using OnlineApartmentReservationSystem.Domain.Apartments.Interface;
 using OnlineApartmentReservationSystem.Domain.Bookings.Entities;
 using OnlineApartmentReservationSystem.Domain.Bookings.Errors;
 using OnlineApartmentReservationSystem.Domain.Bookings.Interface;
-using OnlineApartmentReservationSystem.Domain.Bookings.Repositories;
 using OnlineApartmentReservationSystem.Domain.Bookings.Services;
 using OnlineApartmentReservationSystem.Domain.Bookings.ValueObjects;
 using OnlineApartmentReservationSystem.Domain.Users.Errors;
@@ -21,7 +20,7 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.CommandHandlers
     {
         private readonly IUserRepository _userRepository;
         private readonly IApartmentRepository _apartmentRepository;
-        private readonly IBookRepository _bookRepository;
+        private readonly IBookingRepository _bookRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly PricingService _pricingService;
         private readonly IDateTimeProvider _dateTimeProvider;
@@ -29,7 +28,7 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.CommandHandlers
         public ReserveBookingCommandHandler(
             IUserRepository userRepository,
             IApartmentRepository apartmentRepository,
-            IBookRepository bookRepository,
+            IBookingRepository bookRepository,
             IUnitOfWork unitOfWork,
             PricingService pricingService,
             IDateTimeProvider dateTimeProvider)
@@ -67,7 +66,12 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.CommandHandlers
 
             try
             {
-                var booking = Booking.Reserve(apartment, user.Id, duration, _dateTimeProvider.UtcNow, _pricingService);
+                var booking = Booking.Reserve(
+                    apartment, 
+                    user.Id, 
+                    duration, 
+                    _dateTimeProvider.UtcNow, 
+                    _pricingService);
 
                 _bookRepository.Add(booking);
 

@@ -8,12 +8,12 @@ namespace OnlineApartmentReservationSystem.Application.Bookings.EventHandler
 {
     internal sealed class BookingReservedDomainEventHandler : INotificationHandler<BookingReservedDomainEvent>
     {
-        private readonly IBookRepository _bookingRepository;
+        private readonly IBookingRepository _bookingRepository;
         private readonly IUserRepository _userRepository;
         private readonly IEmailService _emailService;
 
         public BookingReservedDomainEventHandler(
-            IBookRepository bookingRepository, 
+            IBookingRepository bookingRepository, 
             IUserRepository userRepository, 
             IEmailService emailService)
         {
